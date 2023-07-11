@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: DividendInfo
+
+  h2:
+    console:
+      enable: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+      use-new-id-generator-mapping: false
+    show-sql: true
+    defer-datasource-initialization: true
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc.h2:mem:dividend; DB_CLOSE_DELAY=-1
+    username: root
+    password: rtrt
+
+  redis:
+    host: localhost
+    port: 6379
+
+  jwt:
+    secret: aGktaGVsbG8tbmljZVRvLW1lZXQteWE=
+scheduler:
+  scrap:
+    yahoo: "0 0 0 * * *"
+
